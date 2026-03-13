@@ -24,8 +24,10 @@ pip install einops gdown addict future lmdb numpy pyyaml requests scipy tb-night
 Ensure the `basicsr` module is properly recognized by Python before running inference:
 
 ```bash
+%cd histoformer
 touch basicsr/__init__.py
 export PYTHONPATH=$(pwd):$PYTHONPATH
+%cd ..
 
 ```
 
