@@ -1,4 +1,3 @@
-```markdown
 # 🌧️ NTIRE 2026: Day & Night Raindrop Removal (Dual-Focused Images)
 **Team:** RAIN-SVNIT
 **Official Submission for the NTIRE 2026 Challenge at CVPR**
