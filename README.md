@@ -107,8 +107,3 @@ If you utilize this pipeline or our dataset methodology, please acknowledge the 
 
 ```
 
-```
-
-Once you push this to GitHub, your code is perfectly reproducible. Do you want to start structuring the abstract and introduction for the CVPR workshop paper now?
-
-```
