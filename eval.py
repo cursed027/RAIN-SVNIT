@@ -1,4 +1,3 @@
-%%writefile infer_colab.py
 import os
 import sys
 import argparse
@@ -11,15 +10,25 @@ import hashlib
 import shutil
 from tqdm import tqdm
 
-sys.path.append('/content/Histoformer')
+import os
+import sys
+
+# Dynamically get the absolute path of the directory where eval.py lives
+current_dir = os.path.dirname(os.path.abspath(__file__))
+histoformer_dir = os.path.join(current_dir, 'histoformer')
+
+# Append the histoformer folder to sys.path so Python can find 'basicsr'
+if histoformer_dir not in sys.path:
+    sys.path.append(histoformer_dir)
+
 # ================= ARCHITECTURE IMPORT =================
 try:
     from basicsr.models.archs.histoformer_arch import Histoformer
 except ImportError:
-    print("❌ ERROR: Could not import Histoformer. Make sure the basicsr folder is in your Colab working directory.")
+    print(f"❌ ERROR: Could not import Histoformer.")
+    print(f"Make sure the 'basicsr' folder exists inside: {histoformer_dir}")
     sys.exit(1)
 # =======================================================
-
 WINDOW_SIZE = 192
 
 def tta8_forward(model, x):
